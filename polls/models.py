@@ -1,8 +1,10 @@
 #-*- coding: utf-8 -*-
 from django.db import models
 
+from .nukable_model import NukableModel
 
-class Poll(models.Model):
+
+class Poll(NukableModel['Poll'], models.Model):
     question = models.CharField(max_length=200)
 
     def __str__(self):              # Python 3: def __unicode__(self):
